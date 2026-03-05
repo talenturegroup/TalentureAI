@@ -2,7 +2,7 @@
 
 import { useAuth } from '@/lib/auth-context'
 import { useRouter } from 'next/navigation'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 
 export default function AdminLayout({
   children,
@@ -11,6 +11,16 @@ export default function AdminLayout({
 }) {
   const { user, profile, loading } = useAuth()
   const router = useRouter()
+  const [loadingTimeout, setLoadingTimeout] = useState(false)
+
+  useEffect(() => {
+    // Force stop loading after 3 seconds max
+    const timer = setTimeout(() => {
+      setLoadingTimeout(true)
+    }, 3000)
+
+    return () => clearTimeout(timer)
+  }, [])
 
   useEffect(() => {
     if (!loading && (!user || (profile?.role !== 'admin' && profile?.role !== 'staff'))) {
@@ -18,7 +28,8 @@ export default function AdminLayout({
     }
   }, [user, profile, loading, router])
 
-  if (loading) {
+  // If loading state is stuck for too long, show content anyway
+  if (loading && !loadingTimeout) {
     return (
       <div className="flex min-h-screen items-center justify-center">
         <div className="text-center">

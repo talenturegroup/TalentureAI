@@ -6,6 +6,9 @@ import './globals.css'
 const _geist = Geist({ subsets: ["latin"] });
 const _geistMono = Geist_Mono({ subsets: ["latin"] });
 
+// Disable caching for all pages
+export const revalidate = 0
+
 export const metadata: Metadata = {
   title: 'AI Tools Hub',
   description: 'Manage your AI writing and voice tools',

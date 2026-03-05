@@ -26,9 +26,9 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   const [user, setUser] = useState<User | null>(null)
   const [profile, setProfile] = useState<Profile | null>(null)
   const [loading, setLoading] = useState(true)
+  const supabase = createClient()
 
   useEffect(() => {
-    const supabase = createClient()
     let isMounted = true
 
     // Check current session

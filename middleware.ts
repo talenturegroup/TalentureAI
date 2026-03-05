@@ -1,8 +1,15 @@
 import { updateSession } from '@/lib/supabase/middleware'
-import { type NextRequest } from 'next/server'
+import { type NextRequest, NextResponse } from 'next/server'
 
 export async function middleware(request: NextRequest) {
-  return await updateSession(request)
+  const response = await updateSession(request)
+
+  // Disable all caching
+  response.headers.set('Cache-Control', 'no-store, no-cache, must-revalidate, proxy-revalidate, max-age=0')
+  response.headers.set('Pragma', 'no-cache')
+  response.headers.set('Expires', '0')
+
+  return response
 }
 
 export const config = {
