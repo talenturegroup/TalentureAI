@@ -11,24 +11,24 @@ export const revalidate = 0
 
 export const metadata: Metadata = {
   title: 'Talenture AI Hub',
-  description: 'Manage your AI writing and voice tools',
-  generator: 'v0.app',
+  description: 'All Talenture AI tools in one palce',
+  generator: 'Talenture',
   icons: {
     icon: [
       {
-        url: '/icon-light-32x32.png',
+        url: '/talenture_group_logo.jpeg',
         media: '(prefers-color-scheme: light)',
       },
       {
-        url: '/icon-dark-32x32.png',
+        url: '/talenture_group_logo.jpeg',
         media: '(prefers-color-scheme: dark)',
       },
       {
-        url: '/icon.svg',
+        url: '/talenture_group_logo.jpeg',
         type: 'image/svg+xml',
       },
     ],
-    apple: '/apple-icon.png',
+    apple: '/talenture_group_logo.jpeg',
   },
 }
 

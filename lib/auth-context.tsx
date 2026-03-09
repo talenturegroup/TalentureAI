@@ -54,7 +54,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
           }
         }
       } catch (error) {
-        console.error('[v0] Error checking auth:', error)
+        console.error('[Error checking auth:', error)
       } finally {
         if (isMounted) {
           setLoading(false)
