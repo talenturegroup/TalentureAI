@@ -69,7 +69,7 @@ export default function DashboardPage() {
               </CardContent>
             </Card>
 
-            {/* Voice AI Card */}
+            {/* RolePlay AI Card */}
             <Card className="flex flex-col hover:shadow-lg transition-shadow">
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
@@ -86,13 +86,49 @@ export default function DashboardPage() {
                 <p className="text-sm text-muted-foreground mb-6">
                   Have natural conversations with advanced AI powered by ElevenLabs' conversational AI technology with realistic voice interactions.
                 </p>
-                <Link href="/tools/voice-ai">
+                <Link href="/tools/roleplay-agent">
                   <Button
                     className="w-full"
                     onClick={() => setLoadingTool('voice-ai')}
                     disabled={loadingTool === 'voice-ai'}
                   >
                     {loadingTool === 'voice-ai' ? (
+                      <>
+                        <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                        Opening...
+                      </>
+                    ) : (
+                      'Open Tool'
+                    )}
+                  </Button>
+                </Link>
+              </CardContent>
+            </Card>
+
+            {/* AI Recruiter Card */}
+            <Card className="flex flex-col hover:shadow-lg transition-shadow">
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2">
+                  <span className="w-8 h-8 bg-purple-100 rounded-lg flex items-center justify-center text-purple-600">
+                    🎤
+                  </span>
+                  Candidates Pre-Screening Agent
+                </CardTitle>
+                <CardDescription>
+                  AI Recruiter: The Smart AI Candidate Screener
+                </CardDescription>
+              </CardHeader>
+              <CardContent className="flex-1 flex flex-col justify-between">
+                <p className="text-sm text-muted-foreground mb-6">
+                  AI that calls candidates to audit skills in real-time. Get instant transcripts and rankings to hire the best people faster.
+                </p>
+                <Link href="/tools/ai-recruiter">
+                  <Button
+                    className="w-full"
+                    onClick={() => setLoadingTool('ai-recruiter')}
+                    disabled={loadingTool === 'ai-recruiter'}
+                  >
+                    {loadingTool === 'ai-recruiter' ? (
                       <>
                         <Loader2 className="mr-2 h-4 w-4 animate-spin" />
                         Opening...

@@ -17,7 +17,7 @@ export default function VoiceAIPage() {
           </Link>
 
           <div className="mb-8">
-            <h1 className="text-3xl font-bold mb-2">Eleven AI Lab</h1>
+            <h1 className="text-3xl font-bold mb-2">Role Play Agent</h1>
             <p className="text-muted-foreground">
               Have intelligent conversations with AI powered by ElevenLabs
             </p>
