@@ -83,7 +83,10 @@ export function ElevenLabsWidget({ agentId }: ElevenLabsWidgetProps) {
       {isLoading && (
         <div className="flex flex-col items-center gap-4 py-12">
           <div className="inline-block h-8 w-8 animate-spin rounded-full border-4 border-solid border-current border-r-transparent"></div>
-          <p className="text-sm text-muted-foreground">Loading Agent</p>
+          <p className="text-sm text-muted-foreground">Loading Agent
+
+            
+          </p>
         </div>
       )}
 
