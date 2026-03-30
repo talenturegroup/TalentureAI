@@ -106,7 +106,7 @@ export default function DashboardPage() {
             </Card>
 
             {/* AI Recruiter Card */}
-            <Card className="flex flex-col hover:shadow-lg transition-shadow">
+            {/* <Card className="flex flex-col hover:shadow-lg transition-shadow">
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
                   <span className="w-8 h-8 bg-purple-100 rounded-lg flex items-center justify-center text-purple-600">
@@ -139,7 +139,7 @@ export default function DashboardPage() {
                   </Button>
                 </Link>
               </CardContent>
-            </Card>
+            </Card> */}
           </div>
 
           {/* Quick Stats */}
